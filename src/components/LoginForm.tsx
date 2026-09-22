@@ -1,3 +1,4 @@
+import SocialLoginButtons from './SocialLoginButtons';
 import { useState, type FormEvent } from 'react';
 import { Box, Typography, TextField, Button, Stack, Link } from '@mui/material';
 export default function LoginForm() {
@@ -66,6 +67,7 @@ const handleSubmit = (event: FormEvent) => {
 >
   Forgot Password?
 </Link> 
+<SocialLoginButtons />
   </Stack>
     </Box>
   );

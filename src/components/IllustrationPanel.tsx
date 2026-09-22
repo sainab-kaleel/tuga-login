@@ -1,4 +1,5 @@
 // src/components/IllustrationPanel.tsx
+import illustration from '../assets/illustration.svg';
 import { Box, Typography, IconButton } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -11,12 +12,12 @@ export default function IllustrationPanel() {
 
       <Box
         component="img"
-        src="/illustration.svg"  // swap in your chosen undraw/storyset illustration
+        src={illustration}
         alt="task management illustration"
         sx={{ maxWidth: 340, width: '100%' }}
       />
 
-      <Typography variant="h6" color="white" textAlign="center" fontWeight={700} mt={3}>
+      <Typography variant="h6" color="white" sx={{ textAlign: 'center', fontWeight: 700, mt: 3 }}>
         Make your work easier and organized with Tuga's App
       </Typography>
 

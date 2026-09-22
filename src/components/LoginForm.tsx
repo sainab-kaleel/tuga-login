@@ -1,4 +1,6 @@
 import SocialLoginButtons from './SocialLoginButtons';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 import { useState, type FormEvent } from 'react';
 import { Box, Typography, TextField, Button, Stack, Link } from '@mui/material';
 export default function LoginForm() {
@@ -6,6 +8,10 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');     
 const [emailError, setEmailError] = useState('');
 const [passwordError, setPasswordError] = useState('');
+
+const { signInWithGoogle } = useAuth();
+const navigate = useNavigate();
+
 const handleSubmit = (event: FormEvent) => {
   event.preventDefault();
 
@@ -24,6 +30,16 @@ const handleSubmit = (event: FormEvent) => {
   }
 
   console.log('submitted', email, password);
+};
+const handleGoogleSignIn = async () => {
+  try {
+    const { user, accessToken } = await signInWithGoogle();
+    sessionStorage.setItem('accessToken', accessToken);
+    sessionStorage.setItem('userName', user.displayName ?? 'User');
+    navigate('/dashboard');
+  } catch (error) {
+    console.error('Sign-in failed:', error);
+  }
 };
   return (
     <Box component="form" onSubmit={handleSubmit}>
@@ -58,6 +74,14 @@ const handleSubmit = (event: FormEvent) => {
   {/* Login button */}
   <Button type="submit" variant="contained" fullWidth>
   Login
+</Button>
+
+<Button
+  variant="outlined"
+  fullWidth
+  onClick={handleGoogleSignIn}
+>
+  Sign in with Google
 </Button>
 
   <Link

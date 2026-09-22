@@ -1,7 +1,6 @@
 import { Grid, Box } from '@mui/material';
 import LoginForm from '../components/LoginForm';
 import IllustrationPanel from '../components/IllustrationPanel';
-
 export default function LoginPage() {
   return (
     <Grid container sx={{ minHeight: '100vh' }}>

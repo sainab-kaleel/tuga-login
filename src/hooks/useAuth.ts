@@ -16,7 +16,7 @@ export function useAuth() {
             return { user, accessToken};
         }
         catch (error) {
-            console.error('Goole sign in failed:' , error);
+            console.error('Google sign in failed: ' , error);
             throw error;
         }
 

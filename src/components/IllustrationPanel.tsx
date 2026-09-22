@@ -17,9 +17,18 @@ export default function IllustrationPanel() {
         sx={{ maxWidth: 340, width: '100%' }}
       />
 
-      <Typography variant="h6" color="white" sx={{ textAlign: 'center', fontWeight: 700, mt: 3}}>
-        Make your work easier and organized with Tuga's App
-      </Typography>
+      <Typography 
+  variant="h6" 
+  sx={{ 
+    color: '#FFFFFF',
+    textAlign: 'center', 
+    fontWeight: 700, 
+    mt: 3,
+    textShadow: '0 2px 8px rgba(0,0,0,0.25)'
+  }}
+>
+  Make your work easier and organized with Tuga's App
+</Typography>
 
       <Box sx={{ display: 'flex', gap: 1, mt: 2 }}>
         {[0, 1, 2].map((i) => (

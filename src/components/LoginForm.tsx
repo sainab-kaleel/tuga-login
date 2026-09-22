@@ -8,7 +8,9 @@ const [passwordError, setPasswordError] = useState('');
 const handleSubmit = (event: FormEvent) => {
   event.preventDefault();
 
-  if (!email.includes('@')) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
     setEmailError('Please enter a valid email');
   } else {
     setEmailError('');
@@ -22,15 +24,15 @@ const handleSubmit = (event: FormEvent) => {
 
   console.log('submitted', email, password);
 };
-  
   return (
-    <Box>
+    <Box component="form" onSubmit={handleSubmit}>
       <Typography  variant="h4">Welcome back!</Typography>
-      <Box component="form" onSubmit={handleSubmit}></Box>
+
       <Typography  variant="body2">
        Simplify your workflow and boost your productivity with Tuga's App
       </Typography>
       <Stack spacing={2} sx={{ mt: 3 }}>
+
   {/* Username TextField */}
   <TextField
     label="Username"

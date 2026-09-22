@@ -48,17 +48,16 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 Get these from the Firebase Console → Project Settings → Your Apps.
 
-Run locally
-bash
+Run locally:
 npm run dev
 Open http://localhost:5173
 
-Build & deploy
-bash
+Build & deploy:
 npm run build
 firebase deploy
-Project Structure
-text
+
+Project Structure:
+
 src/
 ├── components/       # LoginForm, IllustrationPanel, SocialLoginButtons
 ├── firebase/         # Firebase initialization
@@ -67,7 +66,8 @@ src/
 ├── theme/            # Custom MUI theme
 ├── types/            # TypeScript types
 └── utils/            # Validators
-Author
+
+Author:
 Sainab Kaleel
 
 
